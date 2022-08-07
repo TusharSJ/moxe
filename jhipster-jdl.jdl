@@ -1,0 +1,29 @@
+
+entity Hospital {
+ name String required,
+ description String
+}
+
+entity Provider {
+ name String required,
+ specialty String
+}
+
+entity Patient {
+ name String required,
+ dateOfBirth Instant required,
+ sex Sex required
+}
+
+enum Sex {
+    MALE, FEMALE, OTHER
+}
+
+relationship OneToMany {
+	Hospital to Provider{hospital},
+    Provider to Patient{provider}
+}
+
+
+paginate Hospital, Provider, Patient with pagination
+filter Provider, Patient

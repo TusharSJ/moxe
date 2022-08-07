@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Provider.
+    -->
+    <changeSet id="20220805030053-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="hospital_id"
+                                 baseTableName="provider"
+                                 constraintName="fk_provider__hospital_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hospital"/>
+    </changeSet>
+</databaseChangeLog>
